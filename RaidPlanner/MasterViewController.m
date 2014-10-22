@@ -70,6 +70,7 @@
     Adventurer *adventurer = [self.adventurers objectAtIndex:indexPath.row];
 
     cell.textLabel.text = adventurer.name;
+    cell.detailTextLabel.text = @(adventurer.raids.count).description;
     return cell;
 }
 

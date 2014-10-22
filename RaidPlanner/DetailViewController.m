@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import <CoreData/CoreData.h>
 
 @interface DetailViewController ()
 
@@ -24,9 +25,23 @@
 
 - (Raid *)createRaid
 {
-    Raid *raid = [NSEntityDescription insertNewObjectForEntityForName:@"Raid" inManagedObjectContext:self.adventurer.managedObjectContext];
-    raid.date = self.datePicker.date;
-    return raid;
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Raid"];
+    request.predicate = [NSPredicate predicateWithFormat:@"date=%@", self.datePicker.date];
+    NSArray *results = [self.adventurer.managedObjectContext executeFetchRequest:request error:nil];
+
+    if (results.count > 0)
+    {
+        NSLog(@"Raid already exisits");
+        return results.firstObject;
+    }
+    else
+    {
+        Raid *raid = [NSEntityDescription insertNewObjectForEntityForName:@"Raid" inManagedObjectContext:self.adventurer.managedObjectContext];
+        raid.date = self.datePicker.date;
+        return raid;
+    }
+    
+
 }
 
 
