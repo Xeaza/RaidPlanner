@@ -10,6 +10,8 @@
 
 @interface DetailViewController ()
 
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+
 @end
 
 @implementation DetailViewController
@@ -18,6 +20,13 @@
 {
     [super viewDidLoad];
     self.navigationItem.title = self.adventurer.name;
+}
+
+- (Raid *)createRaid
+{
+    Raid *raid = [NSEntityDescription insertNewObjectForEntityForName:@"Raid" inManagedObjectContext:self.adventurer.managedObjectContext];
+    raid.date = self.datePicker.date;
+    return raid;
 }
 
 

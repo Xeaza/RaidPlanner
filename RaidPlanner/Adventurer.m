@@ -7,6 +7,7 @@
 //
 
 #import "Adventurer.h"
+#import "Raid.h"
 
 
 @implementation Adventurer

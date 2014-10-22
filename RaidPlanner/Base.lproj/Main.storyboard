@@ -115,6 +115,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN"/>
+                    <connections>
+                        <outlet property="datePicker" destination="JjH-Hr-uhL" id="Q3P-Do-Ff1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
                 <exit id="Uxw-eG-bHh" userLabel="Exit" sceneMemberID="exit"/>

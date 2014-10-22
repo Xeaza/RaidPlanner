@@ -5,12 +5,12 @@
             <userInfo/>
         </attribute>
         <attribute name="species" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <relationship name="raids" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Raid" inverseName="adventurers" inverseEntity="Raid" syncable="YES"/>
+        <relationship name="raids" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Raid" inverseName="adventurers" inverseEntity="Raid" syncable="YES"/>
         <userInfo/>
     </entity>
     <entity name="Raid" representedClassName="Raid" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="adventurers" maxCount="1" deletionRule="Nullify" destinationEntity="Adventurer" inverseName="raids" inverseEntity="Adventurer" syncable="YES"/>
+        <relationship name="adventurers" toMany="YES" deletionRule="Nullify" destinationEntity="Adventurer" inverseName="raids" inverseEntity="Adventurer" syncable="YES"/>
     </entity>
     <elements>
         <element name="Adventurer" positionX="261" positionY="189" width="128" height="88"/>

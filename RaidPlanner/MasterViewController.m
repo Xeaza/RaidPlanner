@@ -9,6 +9,7 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "Adventurer.h"
+#import "Raid.h"
 
 @interface MasterViewController ()
 
@@ -83,7 +84,20 @@
 
 - (IBAction)unwindFromDetailViewController:(UIStoryboardSegue *)segue
 {
+    DetailViewController *detailViewController =  segue.sourceViewController;
+    Raid *raid = [detailViewController createRaid];
     
+    [raid addAdventurersObject:detailViewController.adventurer];
+    NSError *error;
+    if ([self.managedObjectContext save:&error])
+    {
+        [self loadAdventurers];
+    }
+    else
+    {
+        NSLog(@"Error Adding raid: %@", error.localizedDescription);
+    }
+
 }
 
 @end

@@ -16,8 +16,8 @@
 		345127D319F8054500F89CE4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 345127D219F8054500F89CE4 /* Images.xcassets */; };
 		345127D619F8054500F89CE4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345127D419F8054500F89CE4 /* LaunchScreen.xib */; };
 		345127E219F8054600F89CE4 /* RaidPlannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 345127E119F8054600F89CE4 /* RaidPlannerTests.m */; };
-		345127ED19F805D000F89CE4 /* Adventurer.m in Sources */ = {isa = PBXBuildFile; fileRef = 345127EC19F805D000F89CE4 /* Adventurer.m */; };
-		345127F019F805D100F89CE4 /* Raid.m in Sources */ = {isa = PBXBuildFile; fileRef = 345127EF19F805D100F89CE4 /* Raid.m */; };
+		345127F319F81BAC00F89CE4 /* Raid.m in Sources */ = {isa = PBXBuildFile; fileRef = 345127F219F81BAC00F89CE4 /* Raid.m */; };
+		345127F619F81BAD00F89CE4 /* Adventurer.m in Sources */ = {isa = PBXBuildFile; fileRef = 345127F519F81BAD00F89CE4 /* Adventurer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,10 +47,10 @@
 		345127DB19F8054600F89CE4 /* RaidPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaidPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		345127E019F8054600F89CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		345127E119F8054600F89CE4 /* RaidPlannerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RaidPlannerTests.m; sourceTree = "<group>"; };
-		345127EB19F805D000F89CE4 /* Adventurer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Adventurer.h; sourceTree = "<group>"; };
-		345127EC19F805D000F89CE4 /* Adventurer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Adventurer.m; sourceTree = "<group>"; };
-		345127EE19F805D100F89CE4 /* Raid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Raid.h; sourceTree = "<group>"; };
-		345127EF19F805D100F89CE4 /* Raid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Raid.m; sourceTree = "<group>"; };
+		345127F119F81BAC00F89CE4 /* Raid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Raid.h; sourceTree = "<group>"; };
+		345127F219F81BAC00F89CE4 /* Raid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Raid.m; sourceTree = "<group>"; };
+		345127F419F81BAD00F89CE4 /* Adventurer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Adventurer.h; sourceTree = "<group>"; };
+		345127F519F81BAD00F89CE4 /* Adventurer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Adventurer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +102,10 @@
 				345127D219F8054500F89CE4 /* Images.xcassets */,
 				345127D419F8054500F89CE4 /* LaunchScreen.xib */,
 				345127C619F8054500F89CE4 /* RaidPlanner.xcdatamodeld */,
-				345127EE19F805D100F89CE4 /* Raid.h */,
-				345127EF19F805D100F89CE4 /* Raid.m */,
-				345127EB19F805D000F89CE4 /* Adventurer.h */,
-				345127EC19F805D000F89CE4 /* Adventurer.m */,
+				345127F419F81BAD00F89CE4 /* Adventurer.h */,
+				345127F519F81BAD00F89CE4 /* Adventurer.m */,
+				345127F119F81BAC00F89CE4 /* Raid.h */,
+				345127F219F81BAC00F89CE4 /* Raid.m */,
 				345127BF19F8054500F89CE4 /* Supporting Files */,
 			);
 			path = RaidPlanner;
@@ -238,12 +238,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				345127CE19F8054500F89CE4 /* DetailViewController.m in Sources */,
-				345127F019F805D100F89CE4 /* Raid.m in Sources */,
+				345127F619F81BAD00F89CE4 /* Adventurer.m in Sources */,
 				345127CB19F8054500F89CE4 /* MasterViewController.m in Sources */,
 				345127C519F8054500F89CE4 /* AppDelegate.m in Sources */,
 				345127C819F8054500F89CE4 /* RaidPlanner.xcdatamodeld in Sources */,
 				345127C219F8054500F89CE4 /* main.m in Sources */,
-				345127ED19F805D000F89CE4 /* Adventurer.m in Sources */,
+				345127F319F81BAC00F89CE4 /* Raid.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
