@@ -12,10 +12,32 @@
 
 @interface MasterViewController ()
 
+@property NSArray *adventurers;
+
 @end
 
 @implementation MasterViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self loadAdventurers];
+}
+
+- (void)loadAdventurers
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Adventurer"];
+    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+
+    NSError *error;
+    if (!error) {
+        self.adventurers = [self.managedObjectContext executeFetchRequest:request error:&error];
+    }
+    else {
+        NSLog(@"Error executingFetchRequest for Adventurer: %@", error.localizedDescription);
+    }
+    [self.tableView reloadData];
+}
 
 - (IBAction)onAddNewAdventureer:(UITextField *)textField
 {
@@ -26,13 +48,28 @@
     NSError *error;
     if ([self.managedObjectContext save:&error])
     {
+        [self loadAdventurers];
+        textField.text = @"";
         [textField resignFirstResponder];
     }
     else
     {
         NSLog(@"Error Saving Adventurer: %@",error.localizedDescription);
     }
+}
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.adventurers.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    Adventurer *adventurer = [self.adventurers objectAtIndex:indexPath.row];
+
+    cell.textLabel.text = adventurer.name;
+    return cell;
 }
 
 @end
