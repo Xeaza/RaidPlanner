@@ -72,4 +72,18 @@
     return cell;
 }
 
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    Adventurer *adventurer = [self.adventurers objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+    DetailViewController *viewController = segue.destinationViewController;
+    viewController.adventurer = adventurer;
+}
+
+- (IBAction)unwindFromDetailViewController:(UIStoryboardSegue *)segue
+{
+    
+}
+
 @end
